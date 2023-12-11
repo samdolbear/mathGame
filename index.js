@@ -16,5 +16,32 @@ function startGame() {
   document.getElementById('currentScore').textContent = score;
   correctAnswer = generateQuestion();
   timer = 10;
+
+  //stuff
 }
 
+function updateTimer() {
+  if (timer > 0) {
+    timer--;
+    document.getElementById('timeLeft').textContent = timer;
+  } else {
+    endGame();
+  }
+}
+
+function endGame() {
+ // 
+  
+}
+
+let interval = setInterval(updateTimer, 1000);
+
+document.getElementById('answer').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    const userAnswer = parseInt(this.value);
+    this.value = ''; #
+    if (userAnswer === correctAnswer) {
+
+    }
+  }
+});
